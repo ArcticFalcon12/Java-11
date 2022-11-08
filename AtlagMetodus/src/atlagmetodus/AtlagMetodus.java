@@ -5,6 +5,7 @@
  */
 package atlagmetodus;
 
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -44,6 +45,10 @@ public class AtlagMetodus {
         }
         return 0;
     }
+    //5. Feladat
+    public static double gulaKiszamolo(double aOldal, double bOldal, double magassag) {
+        return ((aOldal*bOldal)*magassag) / 3;
+    }
     public static void main(String[] args) {
         //Bekérem a 2 számot a felhasználótól
         Scanner bekero = new Scanner(System.in);
@@ -60,5 +65,20 @@ public class AtlagMetodus {
         System.out.println("Adja meg a tartomány felső határát: ");
         int tartomanyFelso = bekero.nextInt();
         System.out.println("A random generált szám a megadott tartomány között: " + randomSzam(tartomanyAlso, tartomanyFelso));
+        //4. Feladat
+        int[] szamok = new int[20];
+        int i;
+        for (i = 0; i < 20; i++) {
+            szamok[i]= randomSzam(tartomanyAlso, tartomanyFelso);
+            System.out.println(szamok[i] + " ");
+        }
+        //5. Feladat
+        System.out.println("Adja meg a gúla 'a' oldalának hosszát: ");
+        double szamAOldal = bekero.nextDouble();
+        System.out.println("Adja meg a gúla 'b' oldalának hosszát: ");
+        double szamBOldal = bekero.nextDouble();
+        System.out.println("Adja meg a gúla magasságát: ");
+        double szamMagassag = bekero.nextDouble();
+        System.out.println("A megadott terület és magasságból kiszámított térfogat: " + gulaKiszamolo(szamAOldal, szamBOldal, szamMagassag));
     }
 }
