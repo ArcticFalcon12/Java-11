@@ -43,9 +43,11 @@ public class Ciklusok {
         }
         System.out.println("----------------");
         //Feladat: generáljunk 1-20 között egy páros számot
-        int parosSzam = 1;
+        int max = 20;
+        int min = 1;
+        int parosSzam = 0;
         while (parosSzam % 2 != 0) {
-            int parosSzam = (int) (Math.random()* )
+            Math.floor(Math.random() *(max - min + 1) + min);
             System.out.println(parosSzam);
         }
     }
